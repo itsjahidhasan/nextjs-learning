@@ -16,7 +16,7 @@ export default function AboutPage() {
         <li>This is about page.</li>
       </ol>
 
-      <div className="flex gap-4 items-center flex-col sm:flex-row">
+      <div className="flex gap-4 items-center flex-col sm:flex-row mt-3">
         <button
           onClick={() => router.push("/")}
           className="px-4 py-2 text-sm text-white bg-gradient-to-r from-blue-500 to-blue-400 rounded-md shadow-md hover:bg-gradient-to-r from-blue-600 to-blue-500 focus:outline-none"

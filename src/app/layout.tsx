@@ -22,13 +22,13 @@ export default function RootLayout({
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased `}
       >
-        <div className="w-full fixed top-10 items-center justify-items-center ">
-          <div className="w-300 bg-[#dedcf51f] ps-5 pe-5 pt-5 pb-5 rounded-sm">
-            <div>this is container</div>
-          </div>
-        </div>
-
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+          <div className="w-full items-center justify-items-center ">
+            <div className="w-300 bg-[#dedcf51f] ps-5 pe-5 pt-5 pb-5 rounded-sm">
+              <div>this is container</div>
+            </div>
+          </div>
+
           <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
             {children}
           </main>
