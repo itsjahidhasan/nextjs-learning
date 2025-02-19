@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "../style/globals.css";
 import { GeistMono, GeistSans } from "@/style/constant";
 import Image from "next/image";
+import { AppStoreProvider } from "@/store/store.provider";
+import { NavItems } from "@/constant/layout.constant";
 
 export const metadata: Metadata = {
   title: "Nextjs L",
@@ -23,14 +25,40 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased `}
       >
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-          <div className="w-full items-center justify-items-center ">
-            <div className="w-300 bg-[#dedcf51f] ps-5 pe-5 pt-5 pb-5 rounded-sm">
-              <div>this is container</div>
+          <div className="w-full items-center justify-items-center">
+            <div className="w-300 bg-[#dedcf51f] ps-5 pe-5 pt-5 pb-5 flex justify-between rounded-sm">
+              <div>
+                <a
+                  href={"/"}
+                  className="text-sm text-blue-500 hover:text-blue-600 transition-colors duration-300"
+                >
+                  <Image
+                    aria-hidden
+                    src="/vercel.svg"
+                    alt="Logo"
+                    width={32}
+                    height={32}
+                  />
+                </a>
+              </div>
+              <div>
+                {NavItems?.map((item, idx) => {
+                  return (
+                    <a
+                      href={item?.href}
+                      className="text-sm text-blue-500 hover:text-blue-600 transition-colors duration-300"
+                      key={idx}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
           <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-            {children}
+            <AppStoreProvider>{children}</AppStoreProvider>
           </main>
           <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
             <a
