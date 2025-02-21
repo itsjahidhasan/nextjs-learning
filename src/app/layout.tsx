@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "../style/globals.css";
 import { GeistMono, GeistSans } from "@/style/constant";
 import Image from "next/image";
-import { AppStoreProvider } from "@/store/store.provider";
 import { NavItems } from "@/constant/layout.constant";
+import Link from "next/link";
+import { AppStoreProvider } from "@/store";
 
 export const metadata: Metadata = {
   title: "Nextjs L",
@@ -28,7 +29,7 @@ export default function RootLayout({
           <div className="w-full items-center justify-items-center">
             <div className="w-300 bg-[#dedcf51f] ps-5 pe-5 pt-5 pb-5 flex justify-between rounded-sm">
               <div>
-                <a
+                <Link
                   href={"/"}
                   className="text-sm text-blue-500 hover:text-blue-600 transition-colors duration-300"
                 >
@@ -39,18 +40,18 @@ export default function RootLayout({
                     width={32}
                     height={32}
                   />
-                </a>
+                </Link>
               </div>
               <div>
                 {NavItems?.map((item, idx) => {
                   return (
-                    <a
+                    <Link
                       href={item?.href}
                       className="text-sm text-blue-500 hover:text-blue-600 transition-colors duration-300"
                       key={idx}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   );
                 })}
               </div>

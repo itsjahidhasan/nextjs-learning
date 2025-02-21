@@ -1,7 +1,9 @@
 "use client";
 
 import { createContext, useContext } from "react";
-import { AppStoreType } from "./app.store";
+import { AppStore, AppStoreType } from "./app.store";
 
-export const AppStoreContext = createContext<AppStoreType | null>(null);
+export const AppStoreContext = createContext<AppStoreType>({
+  appStore: new AppStore(),
+});
 export const useStore = () => useContext(AppStoreContext);
