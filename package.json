@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "mobx": "^6.13.6",
+    "mobx-logger": "^0.7.1",
     "mobx-react-lite": "^4.1.0",
     "next": "15.1.7",
     "react": "^19.0.0",

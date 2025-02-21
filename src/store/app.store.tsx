@@ -1,3 +1,4 @@
+import { autorun } from "mobx";
 import { CountStore } from "./count-store";
 
 export interface IAppStore {
@@ -8,6 +9,9 @@ export class AppStore implements IAppStore {
   countStore: CountStore;
   constructor() {
     this.countStore = new CountStore(this);
+    autorun(() => {
+      console.log({ count: this.countStore.getCountValue });
+    });
   }
 }
 
