@@ -3,7 +3,7 @@ import "../style/globals.css";
 import { GeistMono, GeistSans } from "@/style/constant";
 import Image from "next/image";
 import { AppStoreProvider } from "@/store";
-import { NavBar } from "@/components";
+import { Navbar } from "@/components/nav-bar";
 
 export const metadata: Metadata = {
   title: "Nextjs L",
@@ -25,7 +25,7 @@ export default function RootLayout({
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased `}
       >
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-          <NavBar />
+          <Navbar />
 
           <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
             <AppStoreProvider>{children}</AppStoreProvider>

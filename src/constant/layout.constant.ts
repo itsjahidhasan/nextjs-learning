@@ -8,4 +8,8 @@ export const NavItems: INavItems[] = [
     label: "About",
     href: "/about",
   },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
 ];
