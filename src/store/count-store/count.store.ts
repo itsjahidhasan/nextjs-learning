@@ -24,4 +24,10 @@ export class CountStore {
   get getCountValue() {
     return this.count;
   }
+
+  get getCountValueMultiplyByTwo() {
+    console.log({ reCalculating: "reCalculating......" });
+
+    return this.count * 2;
+  }
 }

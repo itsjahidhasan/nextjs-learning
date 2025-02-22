@@ -15,7 +15,7 @@ const AboutPage = observer(() => {
       </div>
 
       <div className="flex gap-4 items-center flex-col sm:flex-row mt-3">
-        get count :{countStore?.count}
+        get count :{countStore?.getCountValueMultiplyByTwo}
       </div>
       <div className="flex gap-4 items-center flex-col sm:flex-row mt-3">
         <button
